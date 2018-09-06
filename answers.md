@@ -56,3 +56,32 @@ var info = document.querySelectorAll( '.bio-info-value' );
 for (var i = 0; i < info.length; i++) {
   info[i].textContent = '';
 }
+
+Part 2
+1. Removing elements from the DOM
+var timeTravel = document.querySelector( '.bar-default:nth-of-type(4)' );
+timeTravel.parentNode.removeChild(timeTravel);
+
+1. Adding Elements to the DOM
+var pikachu = document.querySelector( '#right-image img' );
+var clonePika = pikachu.cloneNode();
+
+2. Looping ten times
+var portContainer = document.querySelector( '.portfolio-container' );
+portContainer.appendChild(clonePika);
+for (var i = 0; i < 10; i++) {
+  portContainer.insertAdjacentHTML('beforeend', clonePika,outerHTML);
+}
+
+
+3.
+var bio = document.querySelector( '.bio-info' );
+bio.appendChild(listItem);
+var currentDate = new Date();
+var rightSpan = document.createElement('span')
+var dateText = document.createTextNode(currentDate);
+rightSpan.appendChild(dateText);
+listItem.appendChild(rightSpan);
+rightSpan.setAttribute('class', 'bio-info-value .bio-info-date');
+leftSpan.setAttribute('class', 'bio-info-title');
+listItem.setAttribute('class', 'bio-info-item')
